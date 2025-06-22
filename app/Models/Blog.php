@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Blog extends Model
 {
@@ -13,4 +14,8 @@ class Blog extends Model
         'slug',
         'description',
     ];
+
+    public function posts(): hasMany {
+        return $this->hasMany(Post::class);
+    }
 }

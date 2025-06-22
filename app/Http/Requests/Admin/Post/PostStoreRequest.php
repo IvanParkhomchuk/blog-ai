@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Admin;
+namespace App\Http\Requests\Admin\Post;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class BlogStoreRequest extends FormRequest
+class PostStoreRequest extends FormRequest
 {
     public function authorize(): bool
     {
@@ -14,8 +14,9 @@ class BlogStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'blog_id' => ['required', 'exists:blogs,id'],
             'title' => ['required', 'string', 'max:255'],
-            'slug' => ['required', 'string', 'max:255', 'unique:blogs,slug'],
+            'slug' => ['required', 'string', 'max:255', 'unique:posts,slug'],
             'description' => ['nullable', 'string'],
         ];
     }

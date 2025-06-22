@@ -19,6 +19,10 @@
                     <x-nav-link :href="route('admin.blogs.index')">
                         {{ __('Blogs') }}
                     </x-nav-link>
+
+                    <x-nav-link :href="route('admin.posts.index')">
+                        {{ __('Posts') }}
+                    </x-nav-link>
                 </div>
             </div>
 

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,6 +25,17 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'verified'])->group(
             Route::get('/edit/{blog}', [BlogController::class, 'edit'])->name('edit');
             Route::patch('/{blog}', [BlogController::class, 'update'])->name('update');
             Route::delete('/{blog}', [BlogController::class, 'destroy'])->name('destroy');
+        });
+
+    Route::prefix('posts')
+        ->name('posts.')
+        ->group(function () {
+            Route::get('', [PostController::class, 'index'])->name('index');
+            Route::get('/create', [PostController::class, 'create'])->name('create');
+            Route::post('', [PostController::class, 'store'])->name('store');
+            Route::get('/edit/{post}', [PostController::class, 'edit'])->name('edit');
+            Route::patch('/{post}', [PostController::class, 'update'])->name('update');
+            Route::delete('/{post}', [PostController::class, 'destroy'])->name('destroy');
         });
 });
 

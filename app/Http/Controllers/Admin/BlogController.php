@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\BlogStoreRequest;
-use App\Http\Requests\Admin\BlogUpdateRequest;
+use App\Http\Requests\Admin\Blog\BlogStoreRequest;
+use App\Http\Requests\Admin\Blog\BlogUpdateRequest;
 use App\Models\Blog;
 
 class BlogController extends Controller
