@@ -74,11 +74,35 @@
                         {{ __('Cancel') }}
                     </a>
                     <button type="submit"
-                            class="bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-200">
+                            class="bg-blue-600 px-4 py-2 text-white rounded-lg hover:bg-blue-700 transition duration-200">
                         {{ __('Create') }}
                     </button>
                 </div>
             </form>
         </div>
     </div>
+@endsection
+
+@section('scripts')
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#description').summernote({
+                height: 300,
+                tabsize: 2,
+                toolbar: [
+                    ['style', ['style']],
+                    ['font', ['bold', 'underline', 'clear']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['table', ['table']],
+                    ['insert', ['link', 'picture', 'video']],
+                    ['view', ['fullscreen', 'codeview', 'help']]
+                ]
+            });
+        });
+    </script>
 @endsection

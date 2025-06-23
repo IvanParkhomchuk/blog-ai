@@ -7,7 +7,7 @@
                 {{ __('Posts') }}
             </h2>
             <a href="{{ route('admin.posts.create') }}"
-               class="bg-indigo-600 px-5 py-2.5 rounded-lg hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition duration-200 font-medium shadow-sm">
+               class="bg-indigo-600 px-5 py-2.5 text-white rounded-lg hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition duration-200 font-medium shadow-sm">
                 {{ __('Create post') }}
             </a>
         </div>
@@ -33,9 +33,6 @@
                             {{ __('Description') }}
                         </th>
                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            {{ __('Created at') }}
-                        </th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             {{ __('Actions') }}
                         </th>
                     </tr>
@@ -47,7 +44,7 @@
                                 {{ $post->id }}
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                {{ $post->blog->title }}
+                                {{ $post->blog?->title ?? '-' }}
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                                 {{ $post->title }}
@@ -57,9 +54,6 @@
                             </td>
                             <td class="px-6 py-4 text-sm text-gray-500">
                                 {{ Str::limit($post->description, 50) }}
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                {{ $post->created_at->format('d.m.Y H:i') }}
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                  <a href="{{ route('admin.posts.edit', $post) }}"

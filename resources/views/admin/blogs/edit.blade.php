@@ -66,7 +66,7 @@
                         {{ __('Cancel') }}
                     </a>
                     <button type="submit"
-                            class="bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-200">
+                            class="bg-blue-600 px-4 py-2 text-white rounded-lg hover:bg-blue-700 transition duration-200">
                         {{ __('Update') }}
                     </button>
                 </div>

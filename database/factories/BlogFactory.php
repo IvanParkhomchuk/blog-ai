@@ -15,7 +15,7 @@ class BlogFactory extends Factory
      */
     public function definition(): array
     {
-        $title = $this->faker->unique()->sentence(3, true);
+        $title = $this->faker->unique()->sentence(1, true);
         $slug = Str::slug($title);
 
         return [

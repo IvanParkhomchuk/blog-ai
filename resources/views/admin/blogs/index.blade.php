@@ -7,7 +7,7 @@
                 {{ __('Blogs') }}
             </h2>
             <a href="{{ route('admin.blogs.create') }}"
-               class="bg-indigo-600 px-5 py-2.5 rounded-lg hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition duration-200 font-medium shadow-sm">
+               class="bg-indigo-600 px-5 py-2.5 text-white rounded-lg hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition duration-200 font-medium shadow-sm">
                 {{ __('Create blog') }}
             </a>
         </div>
